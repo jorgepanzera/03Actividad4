@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" 
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+   crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/mystyle.css" /> <!-- al ponerla debajo de boostrap, estas tienen prioridad-->  
+
+  <title>Movie Picker</title>
+</head>
+<body>
+
+  <div class="container w-50 mt-3">
+  
+    <div class="text-center">
+      <h1 id="maintitle" class="movie-title">Find the perfect movie for you !!</h1>
+    </div>
+
+    <div id="movie-form">
+      <form id="movie-finder">
+        <div class="form-group w-75 mx-auto">
+          <div class="text-center">
+            <label for="name-input" >What's your name ?</label>
+          </div>
+          <input id="name-input" type="text" class="form-control mb-3 mt-2"  placeholder="Enter your Name" style="text-align:center;">
+        </div>
+        <div class="form-group">
+          <div class="text-center">
+            <label for="count-input" >Choose how many movies to find</label>
+            <div class="w-25 mx-auto mt-2">
+              <select class="form-select" id="countDataList">
+                <option selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3"> 3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="1000">All we have !</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3 mt-4">
+          <label class="input-group-text" for="genreDataList">Genres</label>
+          <select class="form-select" id="genreDataList">
+            <option selected>Choose...</option>
+            <option value="Action">Action</option>
+            <option value="Crime">Crime</option>
+            <option value="Drama"> Drama</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Biography">Biography</option>
+            <option value="History">History</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Western">Western</option>
+            <option value="Comedy"> Comedy</option>
+            <option value="Romance">Romance</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+          </select>
+        </div>
+        <div class="text-center mb-4">
+          <button id="find-movies" type="submit" class="btn btn-primary" style="width: 40%;">Find movies</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container  text-center">
+      <div id="movies-found" ></div>
+  </div>
+
+  
+  
+
+  <script type="module" src="./assets/js/index.js" ></script>
+</body>
+</html>
