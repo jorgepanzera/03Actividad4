@@ -16,70 +16,90 @@
 
   <title>Movie Picker</title>
 </head>
-<body>
 
-  <div class="container w-50 mt-3">
-  
-    <div class="text-center">
-      <h1 id="maintitle" class="movie-title">Find the perfect movie for you !!</h1>
-    </div>
+<body >
 
-    <div id="movie-form">
-      <form id="movie-finder">
-        <div class="form-group w-75 mx-auto">
-          <div class="text-center">
-            <label for="name-input" >What's your name ?</label>
-          </div>
-          <input id="name-input" type="text" class="form-control mb-3 mt-2"  placeholder="Enter your Name" style="text-align:center;">
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+    
+        <!-- Collapsible wrapper -->
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarCenteredExample"
+        >
+          <!-- Left links -->
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <!-- Left links -->
         </div>
-        <div class="form-group">
-          <div class="text-center">
-            <label for="count-input" >Choose how many movies to find</label>
-            <div class="w-25 mx-auto mt-2">
-              <select class="form-select" id="countDataList">
-                <option selected>0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3"> 3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="1000">All we have !</option>
-              </select>
+        <!-- Collapsible wrapper -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+  </header>
+
+  
+  <section id="main" class="back-movies mt-5">
+    <div class="container w-50 pt-5">
+      <div class="text-center">
+        <h1 id="maintitle" class="movie-font">Find the perfect movie for you !!</h1>
+      </div>
+      <div id="movie-form">
+        <form id="movie-finder">
+          <div class="form-group w-75 mx-auto">
+            <div class="text-center">
+              <label for="name-input" class="movie-subfont fo">What's your name ?</label>
+            </div>
+            <input id="name-input" type="text" class="form-control mb-3 mt-2 movie-input"  placeholder="Enter your Name" style="text-align:center;">
+          </div>
+          <div class="form-group">
+            <div class="text-center">
+              <label for="count-input" class="movie-subfont">Choose how many movies to find</label>
+              <div class="w-25 mx-auto mt-2">
+                <select class="form-select movie-input" id="countDataList">
+                  <option selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3"> 3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="1000">All we have !</option>
+                </select>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="input-group mb-3 mt-4">
-          <label class="input-group-text" for="genreDataList">Genres</label>
-          <select class="form-select" id="genreDataList">
-            <option selected>Choose...</option>
-            <option value="Action">Action</option>
-            <option value="Crime">Crime</option>
-            <option value="Drama"> Drama</option>
-            <option value="Thriller">Thriller</option>
-            <option value="Biography">Biography</option>
-            <option value="History">History</option>
-            <option value="Fantasy">Fantasy</option>
-            <option value="Western">Western</option>
-            <option value="Comedy"> Comedy</option>
-            <option value="Romance">Romance</option>
-            <option value="Sci-Fi">Sci-Fi</option>
-          </select>
-        </div>
-        <div class="text-center mb-4">
-          <button id="find-movies" type="submit" class="btn btn-primary" style="width: 40%;">Find movies</button>
-        </div>
-      </form>
+          <div class="text-center mb-4 mt-3">
+            <button id="find-movies" type="submit" class="movie-button" style="width: 40%;">Find movies</button>
+          </div>
+        </form>
+      </div>      
     </div>
-  </div>
+  </section>
+  <!--
 
-  <div class="container  text-center">
-      <div id="movies-found" ></div>
-  </div>
+    
 
-  
+
+
+
+    <div class="container  text-center">
+        <div id="movies-found" ></div>
+    </div>
+
+
+
+  -->
   
 
   <script type="module" src="./assets/js/index.js" ></script>

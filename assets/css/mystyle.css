@@ -1,13 +1,79 @@
 
-.movie-title {
-  font-weight: 300;
+
+.back-movies {
+  background-image:url("../images/bg.jpg");
+  background-position: center center;
+  background-repeat: repeat;
+  background-size:contain;
+  height: 100vh;  
+  /*background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;*/
+  
+}
+
+/* media query para cambiar el background */
+
+/* Extra Large */
+@media screen and (max-width:1200) {
+  .back-movies {
+    background-image:url("../images/bg.jpg");
+    height: 100vh;      
+  }
+}
+
+/* Desktop */
+@media screen and (max-width:992) {
+  .back-movies {
+    background-image:url("../images/bg.jpg");
+    height: 100vh;      
+  }
+}
+
+/* Tablet */
+@media screen and (max-width:768) {
+  .back-movies {
+    background-image:url("../images/bg-tablet.jpg");
+    height: 100vh;      
+  }
+}
+
+/* Celular */
+@media screen and (max-width:600) {
+  .back-movies {
+    background-image:url("../images/bg-mobile.jpg");
+    height: 100vh;      
+  }
+}
+
+
+.movie-font {
   font-family: 'Secular One', sans-serif;
+  color: rgb(255,215,0)
 }
 
-
-body {
-background-color:  rgb(211, 211, 211);
+.movie-subfont {
+  color: whitesmoke;
+  font-weight: bold;
 }
+
+.movie-input {
+  filter:brightness(85%)
+}
+
+.movie-button {
+  font-family: 'Secular One', sans-serif;
+  font-weight:normal;
+  border: none;
+  background-color: rgb(255,140,0);
+  color: white;
+  padding: 1%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 6px
+}
+
 
 /* Para la tabla de movies */
 .movie-table {
