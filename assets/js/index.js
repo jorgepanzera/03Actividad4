@@ -95,9 +95,9 @@ const cleanScreen = () => {
 
 window.addEventListener("DOMContentLoaded", () => {
   // obtener elementos de la pantalla
-  const genreList = document.getElementById("genreDataList");
+
   const findButton = document.querySelector("#find-movies");
-  const divShowMovies = document.getElementById("movies-found");
+  const divShowMovies = document.getElementById("variable-div");
   const mainTitle = document.getElementById("maintitle");
   const name = document.getElementById("name-input");
   const cantMoviesList = document.getElementById("countDataList");
@@ -110,12 +110,11 @@ window.addEventListener("DOMContentLoaded", () => {
     let okToFind = true;
 
     name.classList.remove('is-invalid')
-    genreList.classList.remove("is-invalid")
     cantMoviesList.classList.remove("is-invalid")
 
     divShowMovies.innerHTML = "";
 
-    const genreToFind = genreList.value;
+    const genreToFind = "Sci-Fi";
     const cantMoviesToFind = Number(cantMoviesList.value);
 
     // Chequear datos ingresados
@@ -124,10 +123,6 @@ window.addEventListener("DOMContentLoaded", () => {
       okToFind = false;
     }
 
-    if (genreToFind === "Choose...") {
-      genreList.classList.add("is-invalid");
-      okToFind = false;
-    }
 
     if (cantMoviesToFind == 0) {
       cantMoviesList.classList.add("is-invalid");
