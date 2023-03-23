@@ -1,61 +1,47 @@
 import { movies } from "./data.js";
 
-const findMoviesByGenre = (genreKey) => {
+// Devolver n movies o todas
+const findMoviesRandom = (cantMoviesToFind) => {
   let result = [];
-  for (let i = 0; i < movies.length; i++) {
-    if (movies[i].genre.includes(genreKey)) {
-      result.push(movies[i]);
-    }
+  if (cantMoviesToFind == 1000) {
+    return movies
+  } else {
+    result = getMultipleRandom(movies, cantMoviesToFind)
+    return result;
   }
-  return result;
-};
+}
 
-const generateMoviesTable = (filteredMovies, cantToFind) => {
-  // Obtener titulos de las columnas
-  let col = [];
-  for (let i = 0; i < filteredMovies.length; i++) {
-    for (let key in filteredMovies[i]) {
-      if (col.indexOf(key) === -1) {
-        col.push(key);
-      }
-    }
-  }
+// Armar html para row / columns / cards
+const generateMoviesHtml = (filteredMovies) => {
 
-  // Crear Table
-  const table = document.createElement("table");
+  let innerHTML = `<div class="row gx-5 gy-3 mx-auto">`
 
-  // Crear table header row usando los titulos obtenidos
-  let tr = table.insertRow(-1); // table row.
+  filteredMovies.forEach(function (movieItem) {
+    let imgsrc = "./assets/images/" + movieItem.img
+    let title = movieItem.title
+    let year = movieItem.year
+    let director = movieItem.director
+    let duration = movieItem.duration
+    
+    innerHTML +=  `<div class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card">
+                      <img src="${imgsrc}" class="card-img-top" alt="...">
+                      <div class="card-body text-center">
+                        <h5 class="card-title">${title}</h5>
+                         <p class="card-text">${year}</p>
+                         <p class="card-text">${director}</p>
+                         <p class="card-text">${duration}</p>
+                        <a href="#" class="btn btn-primary mx-auto">Do Something</a>
+                      </div>
+                    </div>
+                  </div>`
+  })
+  innerHTML += `</div>`
+  //console.log(innerHTML)
+  return innerHTML
 
-  for (let i = 0; i < col.length; i++) {
-    if (i !== 4) {
-      let th = document.createElement("th"); // table header.
-      th.innerHTML = col[i].toLocaleUpperCase();
-      th.classList.add("text-center");
-      tr.appendChild(th);
-    }
-  }
+}
 
-  // Agregar rows con los datos de las peliculas
-  // hasta la cantidad elegida, o todos
-  let cantMovies = filteredMovies.length;
-  if (cantToFind < 1000) {
-    cantMovies = cantToFind;
-  }
-
-  for (let i = 0; i < cantMovies; i++) {
-    tr = table.insertRow(-1);
-
-    for (let j = 0; j < col.length; j++) {
-      if (j !== 4) {
-        let tabCell = tr.insertCell(-1);
-        tabCell.innerHTML = filteredMovies[i][col[j]];
-      }
-    }
-  }
-
-  return table;
-};
 
 function wait(waitTime) {
   // implementa un wait
@@ -86,12 +72,14 @@ const PlayWithElements = async (title, name) => {
   title.innerHTML = `OK ${name}, enjoy !!`;
 };
 
-const cleanScreen = () => {
-  divShowMovies.innerHTML = "";
-  genreList.value = "Choose";
-  cantMoviesWanted.value = "0";
-  findButton.textContent = "Find Movies";
-};
+// Obtener n elementos de un array
+function getMultipleRandom(arr, num) {
+  const shuffled = [...arr].sort(() => 0.5 - Math.random());
+
+  return shuffled.slice(0, num);
+}
+
+
 
 window.addEventListener("DOMContentLoaded", () => {
   // obtener elementos de la pantalla
@@ -101,6 +89,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const mainTitle = document.getElementById("maintitle");
   const name = document.getElementById("name-input");
   const cantMoviesList = document.getElementById("countDataList");
+
 
   // listener para el boton de findMovies
   findButton.addEventListener("click", async (event) => {
@@ -132,19 +121,21 @@ window.addEventListener("DOMContentLoaded", () => {
     // Todo Ok, buscar
     if (okToFind) {
 
-      
-      await PlayWithElements(mainTitle, name.value);
 
-      let moviesResult = findMoviesByGenre(genreToFind, cantMoviesToFind);
+      await PlayWithElements(mainTitle, name.value)
+
+      let moviesResult = findMoviesRandom(cantMoviesToFind)
 
       // Agregar data al div container
-      let moviesTable = generateMoviesTable(moviesResult, cantMoviesToFind);
+      let moviesHtml = generateMoviesHtml(moviesResult);
 
+      /*
       moviesTable.classList.add("movie-table"); // aspecto
       moviesTable.classList.add("mx-auto"); // margenes
       moviesTable.style.overflowX = "auto"; // responsive
+      */
 
-      divShowMovies.appendChild(moviesTable);
+      divShowMovies.innerHTML = moviesHtml
     }
   });
 
