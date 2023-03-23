@@ -83,37 +83,9 @@
   max-height: 400px;
 }
 
-
-/* Para la tabla de movies */
-.movie-table {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
+.camera-navbar {
   width: 100%;
-}
-
-.movie-table td, .movie-table th {
-  border: 1px solid rgb(242, 242, 242);
-  /*padding: 8px;*/
-}
-
-.movie-table tr:nth-child(even){
-  background-color: rgb(242, 242, 242);
-}
-
-/* cambiar en hover */
-.movie-table tr:hover {
-  background-color: rgb(122, 223, 216);;
-}
-
-.movie-table th {
-  /*padding-top: 12px;
-  padding-bottom: 12px;*/
-  text-align: left;
-  background-color: rgb(4, 170, 109);
-  color: white;
-}
-
-.form-name {
-  width: 70%;
-  text-align: center;
+  max-width: 100px;
+  height: 100%;
+  max-height: 100px;
 }

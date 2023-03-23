@@ -23,16 +23,16 @@ const generateMoviesHtml = (filteredMovies) => {
     let director = movieItem.director
     let duration = movieItem.duration
     
-    innerHTML +=  `<div class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-3">
+    innerHTML +=  `<div class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-3 d-flex">
                     <div class="card">
                       <img src="${imgsrc}" class="card-img-top" alt="...">
-                      <div class="card-body text-center">
-                        <h5 class="card-title">${title}</h5>
-                         <p class="card-text">${year}</p>
-                         <p class="card-text">${director}</p>
-                         <p class="card-text">${duration}</p>
-                        <a href="#" class="btn btn-primary mx-auto">Do Something</a>
-                      </div>
+                        <div class="card-body text-center flex-fill">
+                          <h5 class="card-title">${title}</h5>
+                          <p class="card-text">${year}</p>
+                          <p class="card-text">${director}</p>
+                          <p class="card-text">${duration}</p>
+                        </div>
+                        <a href="#" class="btn btn-primary mx-auto mb-2">Do Something</a>
                     </div>
                   </div>`
   })
@@ -59,7 +59,7 @@ const PlayWithElements = async (title, name) => {
   // - You take care of Popcorn !! yellow
   // - OK {name}, here it is !!  green like table ?
 
-  console.log(title);
+  //console.log(title);
 
   title.innerHTML = "We are searching your movies...";
 

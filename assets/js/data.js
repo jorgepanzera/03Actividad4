@@ -133,14 +133,5 @@ export const movies = [
       genre: ['Sci-Fi', 'Thriller'],
       score: 9,
       img: 'Spiderman.JPG'
-    },    
-    {
-      title: 'The Wolf of Wall Street',
-      year: 2013,
-      director: 'Martin Scorsese',
-      duration: '3h',
-      genre: ['Biography', 'Comedy', 'Crime', 'Drama'],
-      score: 8.2,
-      img: 'WolfWallStreet.JPG'
-    }    
+    }
   ]
